@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { LangchainModule } from './ai/langchain.module';
 import { SimpleAgentService } from './agents/simple-agent.service';
 import { ConfigModule } from '@nestjs/config';
+import { InteractiveAgentService } from './agents/interactive-agent.service';
 
 @Module({
   imports: [
@@ -13,6 +14,6 @@ import { ConfigModule } from '@nestjs/config';
     LangchainModule,
   ],
   controllers: [AppController],
-  providers: [SimpleAgentService],
+  providers: [SimpleAgentService, InteractiveAgentService], // Thêm InteractiveAgentService
 })
 export class AppModule {}
